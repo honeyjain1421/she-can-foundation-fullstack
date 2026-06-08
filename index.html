@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Can Foundation - Empowering Women</title>
+
+    <!-- Tailwind CSS CDN for modern, clean, and responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN for beautiful, clean vector icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Smooth scrolling behavior when navigation links are clicked */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom animation for the success popup modal */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION SECTION -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo & NGO Name -->
+                <div class="flex items-center space-x-2">
+                    <div class="bg-rose-600 text-white p-2 rounded-full flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-6 h-6 animate-pulse"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-rose-600 to-indigo-600 bg-clip-text text-transparent">
+                        She Can Foundation
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-slate-600 hover:text-rose-600 font-medium transition duration-200">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-rose-600 font-medium transition duration-200">About Us</a>
+                    <a href="#pillars" class="text-slate-600 hover:text-rose-600 font-medium transition duration-200">Our Pillars</a>
+                    <a href="#contact" class="text-slate-600 hover:text-rose-600 font-medium transition duration-200">Contact Us</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-rose-600 focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown (Initially Hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 transition-all duration-300">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-rose-50 hover:text-rose-600">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-rose-50 hover:text-rose-600">About Us</a>
+                <a href="#pillars" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-rose-50 hover:text-rose-600">Our Pillars</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-rose-50 hover:text-rose-600">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-gradient-to-br from-rose-50 via-indigo-50 to-white py-20 md:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-rose-100 text-rose-800">
+                        ✨ NGO Internship Project
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Empowering Women, <br>
+                        <span class="text-rose-600">Shaping Better Futures</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                        Join hands with the She Can Foundation. We are dedicated to providing access to quality training, leadership opportunities, and academic environments designed to unlock female potential worldwide.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#about" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-rose-600 hover:bg-rose-700 shadow-lg hover:shadow-rose-300/50 transition duration-200">
+                            Learn More
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-base font-medium rounded-xl text-slate-700 bg-white hover:bg-slate-50 shadow-sm transition duration-200">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Decorative Graphic -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-rose-400 to-indigo-500 p-2 shadow-2xl">
+                        <div class="w-full h-full rounded-full bg-white flex flex-col justify-center items-center p-8 text-center">
+                            <i data-lucide="heart" class="w-16 h-16 text-rose-500 fill-rose-500 mb-4 animate-bounce"></i>
+                            <h3 class="text-2xl font-bold text-slate-800">10,000+</h3>
+                            <p class="text-slate-500 text-sm mt-1">Lives Empowered Through Local & Global Campaigns</p>
+                        </div>
+                        <!-- absolute decorative elements -->
+                        <div class="absolute -top-4 -left-4 bg-yellow-400 text-slate-900 font-bold p-3 rounded-xl shadow-lg transform -rotate-12 text-sm">
+                            Education For All! 📚
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-indigo-600 text-white font-bold p-3 rounded-xl shadow-lg transform rotate-6 text-sm">
+                            Tech Skills 💻
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">About Our Foundation</h2>
+                <div class="w-24 h-1 bg-rose-600 mx-auto rounded-full"></div>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    The <span class="font-semibold text-rose-600">She Can Foundation</span> is a non-profit organization built on the core belief that when you empower a woman, you empower an entire society. We work closely with experts and volunteers to design impactful courses and support structures.
+                </p>
+            </div>
+
+            <!-- THE CORE PILLARS (Our Mission Card Grid) -->
+            <div id="pillars" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1: Education -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-rose-200 shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center mb-6">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Education</h3>
+                    <p class="text-slate-600">
+                        Bridging the academic gender gap by offering scholarships, mentoring networks, and free resource portals to girls in underprivileged communities.
+                    </p>
+                </div>
+
+                <!-- Pillar 2: Skill Development -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-rose-200 shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">
+                        <i data-lucide="code" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Skill Development</h3>
+                    <p class="text-slate-600">
+                        Empowering women with technical literacy, soft skills, computational coding, and financial wisdom to confidently navigate the digital workforce.
+                    </p>
+                </div>
+
+                <!-- Pillar 3: Opportunity -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-rose-200 shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Opportunities</h3>
+                    <p class="text-slate-600">
+                        Connecting candidates to career counselors, top-tier internships, seed funding for micro-enterprises, and corporate mentorship channels.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM & FEEDBACK SECTION -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-slate-50 to-rose-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100">
+                <div class="text-center max-w-xl mx-auto space-y-3 mb-10">
+                    <h2 class="text-3xl font-bold text-slate-900">Get in Touch</h2>
+                    <p class="text-slate-600">Have questions or want to volunteer? Send us a quick message, and our foundation representatives will reach back!</p>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contact-form" class="space-y-6" novalidate>
+                    <!-- Name Field -->
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                <i data-lucide="user" class="w-5 h-5"></i>
+                            </div>
+                            <input type="text" id="name" name="name" placeholder="E.g. Priya Sharma" 
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition duration-150">
+                        </div>
+                        <p id="name-error" class="text-rose-500 text-xs mt-1 hidden font-medium">Please enter your full name.</p>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <input type="email" id="email" name="email" placeholder="E.g. priya@example.com" 
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition duration-150">
+                        </div>
+                        <p id="email-error" class="text-rose-500 text-xs mt-1 hidden font-medium">Please enter a valid email address.</p>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">Your Message</label>
+                        <div class="relative">
+                            <textarea id="message" name="message" rows="4" placeholder="How would you like to collaborate or ask support?" 
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition duration-150 resize-none"></textarea>
+                        </div>
+                        <p id="message-error" class="text-rose-500 text-xs mt-1 hidden font-medium">Message cannot be left blank.</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit" 
+                            class="w-full flex justify-center items-center py-3 px-6 border border-transparent rounded-xl text-base font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-md hover:shadow-rose-300/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 transition duration-200 cursor-pointer">
+                            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOM NOTIFICATION SUCCESS DIALOG (Hidden by default) -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl border border-emerald-100 animate-fade-in">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check-circle" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Form Submitted Successfully!</h3>
+            <p class="text-slate-600 mb-6">Thank you for writing to the She Can Foundation. Our admissions & development team will contact you shortly.</p>
+            <button id="close-modal-btn" class="w-full py-2.5 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition duration-150">
+                Dismiss
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Branding -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-lg font-bold text-white">She Can Foundation</span>
+                </div>
+                <!-- Mini links -->
+                <div class="flex space-x-6 text-sm">
+                    <a href="#about" class="hover:text-white transition">About</a>
+                    <a href="#pillars" class="hover:text-white transition">Pillars</a>
+                    <a href="#contact" class="hover:text-white transition">Contact</a>
+                </div>
+                <!-- Copyright info -->
+                <p class="text-sm text-slate-500">&copy; 2026 She Can Foundation. Built with ❤️ for the Internship Showcase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide icons on page load
+        lucide.createIcons();
+
+        // DOM elements selection
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        const contactForm = document.getElementById('contact-form');
+        const successModal = document.getElementById('success-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        // Form Fields
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        // Error Feedback Paragraphs
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const messageError = document.getElementById('message-error');
+
+        /**
+         * 1. MOBILE RESPONSIVE HAMBURGER MENU TOGGLE
+         */
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            // Re-render only the menu icon to update dynamically
+            lucide.createIcons({
+                attrs: { id: 'menu-icon' }
+            });
+        });
+
+        // Close dropdown when a navigation link inside is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons({ attrs: { id: 'menu-icon' } });
+            });
+        });
+
+        /**
+         * 2. CLIENT-SIDE VALIDATION LOGIC
+         */
+        function validateEmail(email) {
+            // Standard regex sequence for standard email validations
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        contactForm.addEventListener('submit', (event) => {
+            // Prevent browser default refresh action
+            event.preventDefault();
+
+            let isValid = true;
+
+            // Validate Name
+            if (nameInput.value.trim() === "") {
+                nameError.classList.remove('hidden');
+                nameInput.classList.add('border-rose-500', 'ring-1', 'ring-rose-500');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+                nameInput.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+            }
+
+            // Validate Email
+            if (emailInput.value.trim() === "" || !validateEmail(emailInput.value)) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-rose-500', 'ring-1', 'ring-rose-500');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+            }
+
+            // Validate Message
+            if (messageInput.value.trim() === "") {
+                messageError.classList.remove('hidden');
+                messageInput.classList.add('border-rose-500', 'ring-1', 'ring-rose-500');
+                isValid = false;
+            } else {
+                messageError.classList.add('hidden');
+                messageInput.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+            }
+
+            // If everything is validated successfully
+            if (isValid) {
+                // Display the custom feedback dialog modal
+                successModal.classList.remove('hidden');
+
+                // Clear input values
+                contactForm.reset();
+            }
+        });
+
+        // Clear warning styles when the user starts typing in fields
+        nameInput.addEventListener('input', () => {
+            nameError.classList.add('hidden');
+            nameInput.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+        });
+
+        emailInput.addEventListener('input', () => {
+            emailError.classList.add('hidden');
+            emailInput.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+        });
+
+        messageInput.addEventListener('input', () => {
+            messageError.classList.add('hidden');
+            messageInput.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+        });
+
+        /**
+         * 3. CLOSE SUCCESS DIALOG MODAL
+         */
+        closeModalBtn.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
+
+        // Close modal when user clicks outside the modal card box wrapper
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                successModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
